@@ -61,3 +61,5 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+
+gem 'graphiql-rails', group: :development
