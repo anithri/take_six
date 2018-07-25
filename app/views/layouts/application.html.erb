@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Badger</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html class="max">
+<head>
+  <title>Badger</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'tachyons', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body class="max">
+<div id="appWrapper" class="max">
+  <%= yield %>
+</div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'tachyons', 'data-turbolinks-track': 'reload' %>
+</body>
 </html>

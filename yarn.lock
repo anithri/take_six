@@ -5616,6 +5616,10 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+tachyons-custom@^4.9.5:
+  version "4.9.5"
+  resolved "https://registry.yarnpkg.com/tachyons-custom/-/tachyons-custom-4.9.5.tgz#59b3378ea154850bc199fa970bbc928b68ad1363"
+
 tapable@^0.2.7:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
