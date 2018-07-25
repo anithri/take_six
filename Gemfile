@@ -36,6 +36,8 @@ group :development do
 
   gem 'guard-rails'
   gem 'guard-bundler'
+  gem 'guard-rspec'
+
   gem 'libnotify'
 
   # gem 'rb-fchange', require: false
