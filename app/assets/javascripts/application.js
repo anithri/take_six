@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// Unsure if we need this for the ActionCable Part, otherwise everything should go into the packs
