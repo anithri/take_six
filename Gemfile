@@ -39,7 +39,7 @@ group :development do
   gem 'guard-rspec'
 
   gem 'libnotify'
-
+  gem 'faker'
   # gem 'rb-fchange', require: false
   # gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false

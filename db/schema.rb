@@ -16,15 +16,17 @@ ActiveRecord::Schema.define(version: 2018_07_26_001239) do
   enable_extension "plpgsql"
 
   create_table "internal_projects", force: :cascade do |t|
-    t.string "name"
-    t.integer "project_id"
-    t.integer "category_id", default: 100
-    t.integer "status_id", default: 100
-    t.integer "created_by_id"
-    t.integer "requested_by_id"
+    t.string "name", null: false
+    t.integer "project_num", null: false
+    t.integer "category_id", default: 100, null: false
+    t.integer "status_id", default: 100, null: false
     t.boolean "itar_flag", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_internal_projects_on_category_id"
+    t.index ["name"], name: "index_internal_projects_on_name", unique: true
+    t.index ["project_num", "category_id"], name: "index_internal_projects_on_project_num_and_category_id", unique: true, order: { project_num: :desc }
+    t.index ["status_id"], name: "index_internal_projects_on_status_id"
   end
 
 end
