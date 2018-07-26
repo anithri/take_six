@@ -1,9 +1,12 @@
 require 'active_hash'
 class Category < ActiveHash::Base
+  include ActiveHash::Associations
   field :id
   field :name
   field :abbr
   field :alternatives, default: []
+
+  has_many :projects, class_name: 'InternalProject'
 
   def display_name
     "#{abbr}#{id}"
@@ -40,7 +43,3 @@ class Category < ActiveHash::Base
          abbr: 'NS'
 
 end
-#
-# puts Category.find(100).name.inspect
-# puts Category.find_by_name('Generaal').inspect
-#

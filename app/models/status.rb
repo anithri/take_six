@@ -1,10 +1,14 @@
 require 'active_hash'
 class Status < ActiveHash::Base
+  include ActiveHash::Associations
+
   field :id
   field :name
 
+  has_many :projects, class_name: 'InternalProject'
+
   def self.find_from(term)
-    self.find()
+    self.find_by_id(term) || self.find_by_name(term)
   end
 
   create id:    100,

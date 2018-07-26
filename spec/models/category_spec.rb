@@ -4,12 +4,14 @@ RSpec.describe Category, type: :model do
   before :each do
     @category = Category.first
   end
+
   describe 'instance of Category' do
     it 'should have correct attributes' do
       expect(@category.id).to be_an Integer
       expect(@category.name).to be_a String
       expect(@category.abbr).to be_a String
       expect(@category.alternatives).to be_an Array
+      expect(@category.projects).to be_an(ActiveRecord::Relation)
     end
 
     it 'should return a display_name' do
@@ -25,19 +27,22 @@ RSpec.describe Category, type: :model do
   end
 
   describe '#find_from' do
-
     it 'should return by numeric id' do
       expect(Category.find_from(100)).to eq(@category)
     end
+
     it 'should return by string id' do
       expect(Category.find_from('100')).to eq(@category)
     end
+
     it 'should return by name' do
       expect(Category.find_from(@category.name)).to eq(@category)
     end
+
     it 'should return by abbr' do
       expect(Category.find_from(@category.abbr)).to eq(@category)
     end
+
     it 'should returns nil otherwise' do
       expect(Category.find_from('nonsense')).to be_nil
     end
