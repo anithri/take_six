@@ -7,13 +7,16 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag 'tachyons', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= content_for :styleTags %>
+
 </head>
 
 <body class="max">
-<div id="appWrapper" class="max">
+<div id="appWrapper" class="max bg-blue">
   <%= yield %>
 </div>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'tachyons', 'data-turbolinks-track': 'reload' %>
+<%= content_for :scriptTags %>
 </body>
 </html>

@@ -4,12 +4,27 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
+    "postcss-preset-env": "^5.3.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "tachyons-custom": "^4.9.5"
   },
   "devDependencies": {
+    "eslint": "5.2.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "prettier": "1.13.7",
     "webpack-dev-server": "2.11.2"
+  },
+  "scripts": {
+    "fix:other": "yarn prettier --write",
+    "fix:js": "yarn test:js --fix",
+    "fix": "yarn fix:js && yarn fix:other",
+    "prettier": "prettier \"**/*.{json,md,scss}\"",
+    "test:other": "yarn prettier --list-different",
+    "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
+    "test": "yarn test:other && yarn test:js"
   }
 }

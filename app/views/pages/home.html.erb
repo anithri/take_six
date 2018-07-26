@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
+<% content_for :styleTags do %>
+  <%= stylesheet_pack_tag 'app', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<% content_for :scriptTags do %>
+  <%= javascript_pack_tag 'app', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<h1>Loading</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
