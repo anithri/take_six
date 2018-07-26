@@ -25,10 +25,17 @@ module Badger
     config.generators do |g|
       g.orm :active_record
       g.template_engine :erb
-      g.test_framework :rspec, fixture: true
       g.stylesheets false
       g.javascripts false
       g.helpers false
+
+      g.test_framework :rspec,
+                       fixtures:         false,
+                       view_specs:       false,
+                       helper_specs:     false,
+                       routing_specs:    false,
+                       controller_specs: false,
+                       request_specs:    false
     end
 
     # Settings in config/environments/* take precedence over those specified here.
