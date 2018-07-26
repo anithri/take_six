@@ -10,7 +10,7 @@ RSpec.describe Status, type: :model do
     it 'should have correct attributes' do
       expect(@status.id).to be_a Integer
       expect(@status.name).to be_a String
-      expect(@status.projects).to be_a ActiveRecord::Relation
+      expect(@status.internal_projects).to be_a ActiveRecord::Relation
     end
   end
 

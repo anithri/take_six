@@ -6,7 +6,7 @@ class Category < ActiveHash::Base
   field :abbr
   field :alternatives, default: []
 
-  has_many :projects, class_name: 'InternalProject'
+  has_many :internal_projects
 
   def display_name
     "#{abbr}#{id}"

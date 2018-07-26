@@ -11,7 +11,7 @@ RSpec.describe Category, type: :model do
       expect(@category.name).to be_a String
       expect(@category.abbr).to be_a String
       expect(@category.alternatives).to be_an Array
-      expect(@category.projects).to be_an(ActiveRecord::Relation)
+      expect(@category.internal_projects).to be_an(ActiveRecord::Relation)
     end
 
     it 'should return a display_name' do

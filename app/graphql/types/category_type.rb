@@ -10,4 +10,6 @@ class Types::CategoryType < Types::BaseObject
   field :alternatives, [String], null: true
   description "alternative abbr's for category"
 
+  field :internal_projects, [Types::InternalProjectType], null: false
+
 end

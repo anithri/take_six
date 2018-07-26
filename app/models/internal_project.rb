@@ -31,6 +31,10 @@ class InternalProject < ApplicationRecord
 
   scope :by_category, ->(cat_id) {where(category_id: cat_id)}
 
+  def display_name
+    "#{category.abbr}#{project_num} - #{name}"
+  end
+
   def self.next_num_in_category(cat_id)
     current = self.by_category(cat_id).maximum(:project_num) || 300
     current + 1
