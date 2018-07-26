@@ -4,7 +4,7 @@
     "node": true
   },
   "plugins": ["prettier"],
-  "extends": ["prettier"],
+  "extends": ["prettier", "plugin:react/recommended"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
