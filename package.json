@@ -3,12 +3,18 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "postcss-preset-env": "^5.3.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "tachyons-custom": "^4.9.5"
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.13",
+    "tachyons-custom": "^4.9.5",
+    "typography": "^0.16.17",
+    "typography-theme-github": "^0.15.10"
   },
   "devDependencies": {
     "eslint": "5.2.0",

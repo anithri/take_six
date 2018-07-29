@@ -1,0 +1,17 @@
+@import 'tachyons/custom.css';
+@import './_typography.css';
+@import '_palette.css';
+@import '_variables.css';
+
+html, body, #appWrapper, #appContainer {
+  width: 100%; /* .w-100 */
+  height: 100%; /* .h-100 */
+  padding: var(--spacing-none, 0); /* .pa0 */
+  margin: var(--spacing-none, 0); /* .ma0 */
+}
+
+#appWrapper {
+  background-color: var(--light-purple, #a463f2); /* .bg-light-purple */
+  padding: var(--spacing-none, 0); /* .pa0 */
+  margin: var(--spacing-none, 0); /* .ma0 */
+}

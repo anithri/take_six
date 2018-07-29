@@ -3,10 +3,6 @@ plugins:
   postcss-preset-env:
     stage: 3
     features:
-      'custom-properties':
+      customProperties:
         strict: false
         preserve: true
-        variables:
-          woot: '#123456'
-
-

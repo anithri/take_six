@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html class="max">
+<html>
 <head>
   <title>Badger</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_pack_tag 'tachyons', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= content_for :styleTags %>
+  <%= stylesheet_pack_tag 'app', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
-<body class="max">
-<div id="appWrapper" class="max bg-blue">
+<body>
+<div id="appWrapper">
   <%= yield %>
 </div>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<%= javascript_pack_tag 'tachyons', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'app','data-turbolinks-track': 'reload' %>
 <%= content_for :scriptTags %>
 </body>
 </html>
