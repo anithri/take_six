@@ -16,10 +16,11 @@
 #        GET  /           graphiql/rails/editors#show
 
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
+
   get 'pages/home'
   root 'pages#home'
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-  end
-  post '/graphql', to: 'graphql#execute'
 end
