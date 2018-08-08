@@ -28,13 +28,13 @@
   list-style-type: none;
 }
 
-.nested-copy-indent p+p {
+.nested-copy-indent p + p {
   text-indent: var(--letter-spacing-1);
   margin-top: var(--spacing-none);
   margin-bottom: var(--spacing-none);
 }
 
-.nested-copy-seperator p+p {
+.nested-copy-seperator p + p {
   margin-top: var(--spacing-copy-separator);
 }
 
@@ -46,11 +46,11 @@
 
 .nested-links a {
   color: var(--blue);
-  transition: color .15s ease-in;
+  transition: color 0.15s ease-in;
 }
 
 .nested-links a:hover,
 .nested-links a:focus {
   color: var(--light-blue);
-  transition: color .15s ease-in;
+  transition: color 0.15s ease-in;
 }

@@ -17,11 +17,9 @@
   --font-size-4: 1.5rem;
   --font-size-3: 1.25rem;
   --font-size-2: 1rem;
-  --font-size-1: .875rem;
-  --font-size-0: .75rem;
-
+  --font-size-1: 0.875rem;
+  --font-size-0: 0.75rem;
 }
-
 
 /* Tachyons vars, override as needed */
 /*

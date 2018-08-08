@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateGame
   include Interactor::Organizer
 
@@ -5,9 +7,9 @@ class CreateGame
             FindPlayers,
             ShuffleCards,
             CreateBoards
-            ReadyGame
+  ReadyGame
 
-   def call
-     context.game = Game.new
-   end
+  def call
+    context.game = Game.new
+  end
 end

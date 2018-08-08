@@ -1,5 +1,5 @@
 .max {
-    width: 100%; /* .w-100 */
-    height: 100%; /* .h-100 */
-    background-color: lab(240 50 20);
+  width: 100%; /* .w-100 */
+  height: 100%; /* .h-100 */
+  background-color: lab(240 50 20);
 }

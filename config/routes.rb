@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Route Map
 #
 #                    Prefix Verb URI Pattern                                                                              Controller#Action
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   get 'pages/home'
   root 'pages#home'
   if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   end
   post '/graphql', to: 'graphql#execute'
 end

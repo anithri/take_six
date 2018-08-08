@@ -9,7 +9,6 @@
 
 */
 
-
 /*
     Text that is hidden but accessible
     Ref: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -48,4 +47,3 @@
     clip: rect(1px, 1px, 1px, 1px);
   }
 }
-

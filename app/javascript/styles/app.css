@@ -3,7 +3,10 @@
 @import '_palette.css';
 @import '_variables.css';
 
-html, body, #appWrapper, #appContainer {
+html,
+body,
+#appWrapper,
+#appContainer {
   width: 100%; /* .w-100 */
   height: 100%; /* .h-100 */
   padding: var(--spacing-none, 0); /* .pa0 */

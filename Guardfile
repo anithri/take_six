@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 notification :libnotify
@@ -8,10 +10,10 @@ guard :bundler do
   helper = Guard::Bundler::Verify.new
 
   files = ['Gemfile']
-  files += Dir['*.gemspec'] if files.any? {|f| helper.uses_gemspec?(f)}
+  files += Dir['*.gemspec'] if files.any? { |f| helper.uses_gemspec?(f) }
 
   # Assume files are symlinked from somewhere
-  files.each {|file| watch(helper.real_path(file))}
+  files.each { |file| watch(helper.real_path(file)) }
 end
 
 guard 'rails', host: '0.0.0.0', start_on_start: true do
@@ -19,14 +21,14 @@ guard 'rails', host: '0.0.0.0', start_on_start: true do
   watch(%r{^(config|lib)/.*})
 end
 
-guard :rspec, cmd: "bundle exec rspec", all_after_pass: true, all_on_start: true do
-  require "guard/rspec/dsl"
+guard :rspec, cmd: 'bundle exec rspec', all_after_pass: true, all_on_start: true do
+  require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
   # RSpec files
   rspec = dsl.rspec
-  watch(rspec.spec_helper) {rspec.spec_dir}
-  watch(rspec.spec_support) {rspec.spec_dir}
+  watch(rspec.spec_helper) { rspec.spec_dir }
+  watch(rspec.spec_support) { rspec.spec_dir }
   watch(rspec.spec_files)
 
   # Ruby files
@@ -47,7 +49,7 @@ guard :rspec, cmd: "bundle exec rspec", all_after_pass: true, all_on_start: true
   end
 
   # Rails config changes
-  watch(rails.spec_helper) {rspec.spec_dir}
-  watch(rails.routes) {"#{rspec.spec_dir}/routing"}
-  watch(rails.app_controller) {"#{rspec.spec_dir}/controllers"}
+  watch(rails.spec_helper) { rspec.spec_dir }
+  watch(rails.routes) { "#{rspec.spec_dir}/routing" }
+  watch(rails.app_controller) { "#{rspec.spec_dir}/controllers" }
 end

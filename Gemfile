@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -45,7 +47,8 @@ group :development do
   gem 'rb-inotify', require: false
 
   gem 'annotate'
-
+  gem 'rubocop', require: false
+  gem 'rubocop-rails_config'
   # Use Capistrano for deployment
   # gem 'capistrano-rails', group: :development
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: games
@@ -14,7 +16,6 @@ require 'rails_helper'
 HAS_MANY_THROUGH = [  :players, :card_hands, :worker_areas]
 RSpec.describe Game, type: :model do
   describe 'Associations' do
-
     describe 'has_many' do
       it 'boards' do
         t = Game.reflect_on_association(:boards)
@@ -23,15 +24,10 @@ RSpec.describe Game, type: :model do
     end
 
     describe 'has_many :through' do
-
       it 'players' do
         t = Game.reflect_on_association(:boards)
         expect(t.macro).to eq(:has_many)
-
       end
-
     end
-
   end
 end
-

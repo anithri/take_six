@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: players
@@ -12,5 +14,5 @@ class Player < ApplicationRecord
   has_many :boards
   has_many :games, through: :boards
 
-  scope :active, ->{all}
+  scope :active, -> { all }
 end
