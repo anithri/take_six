@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AbstractGame
+class RailsGameSchema
   Schema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)

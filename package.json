@@ -1,5 +1,5 @@
 {
-  "name": "abstractGame",
+  "name": "takeSix",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
@@ -21,6 +21,7 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-react": "^7.10.0",
+    "hygen": "^1.6.2",
     "prettier": "1.13.7",
     "webpack-dev-server": "2.11.2"
   },
