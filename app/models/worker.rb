@@ -1,5 +1,8 @@
 class Worker < ActiveHash::Base
 
+  field :name
+  field :theme
+
   create id: 11,
         name: 'workerRed',
         theme: 'workerRed'

@@ -13,5 +13,10 @@
 require 'rails_helper'
 
 RSpec.describe Player, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "Player.random" do
+    it 'should return players in a random order' do
+      expect(Player.random.to_a).to_not eq Player.random.to_a
+    end
+
+  end
 end

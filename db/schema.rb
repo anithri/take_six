@@ -10,37 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_003305) do
+ActiveRecord::Schema.define(version: 2018_07_29_222458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
-
-  create_table "boards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "game_id"
-    t.uuid "player_id"
-    t.uuid "card_hand_id"
-    t.uuid "worker_area_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["card_hand_id"], name: "index_boards_on_card_hand_id"
-    t.index ["game_id"], name: "index_boards_on_game_id"
-    t.index ["player_id"], name: "index_boards_on_player_id"
-    t.index ["worker_area_id"], name: "index_boards_on_worker_area_id"
-  end
-
-  create_table "card_hands", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.integer "cards_ids", default: [], array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "games", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.integer "phase", default: 0
-    t.integer "turn", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "players", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
@@ -48,14 +22,4 @@ ActiveRecord::Schema.define(version: 2018_07_30_003305) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "worker_areas", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.integer "worker_ids", default: [], array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "boards", "card_hands"
-  add_foreign_key "boards", "games"
-  add_foreign_key "boards", "players"
-  add_foreign_key "boards", "worker_areas"
 end

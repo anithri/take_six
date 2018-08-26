@@ -1,11 +1,30 @@
 class Types::QueryType < Types::BaseObject
-  # Add root-level fields here.
-  # They will be entry points for queries on your schema.
 
-  # TODO: remove me
-  field :test_field, String, null: false,
-    description: "An example field added by the generator"
-  def test_field
-    "Hello World!"
+  #region Card Model
+  field :card, ::Types::Card, null: true do
+    argument :id, ID, required: true
   end
+  def card(id:)
+    Card.find(id)
+  end
+
+  field :cards, [::Types::Card], null: false
+  def cards
+    Card.all
+  end
+  #endregion
+
+  #region Worker Model
+  field :worker, ::Types::Worker, null: true do
+    argument :id, ID, required: true
+  end
+  def worker(id:)
+    Worker.find(id)
+  end
+
+  field :workers, [::Types::Worker], null: false
+  def workers
+    Worker.all
+  end
+  #endregion
 end

@@ -11,8 +11,8 @@
 #
 
 class Player < ApplicationRecord
-  has_many :boards
-  has_many :games, through: :boards
 
+  scope :random, -> { order(Arel::Nodes::NamedFunction.new('RANDOM', [])) }
   scope :active, -> { all }
+  scope :for_game, -> (count) { active.random.limit(count) }
 end
