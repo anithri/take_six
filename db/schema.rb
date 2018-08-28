@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_184913) do
+ActiveRecord::Schema.define(version: 2018_08_28_235434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -26,36 +26,24 @@ ActiveRecord::Schema.define(version: 2018_08_28_184913) do
   end
 
   create_table "players", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "seats", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "game_id"
-    t.uuid "player_id"
-    t.string "chair_id"
+    t.uuid "user_id"
+    t.string "location_id"
     t.string "goals", default: [], array: true
     t.integer "score", default: 0
     t.integer "placing", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_seats_on_game_id"
-    t.index ["player_id"], name: "index_seats_on_player_id"
+    t.index ["game_id"], name: "index_players_on_game_id"
+    t.index ["user_id"], name: "index_players_on_user_id"
   end
 
-  create_table "slots", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "game_id"
-    t.string "location_id", null: false
-    t.string "card_id", null: false
-    t.string "worker_ids", default: [], null: false, array: true
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id", "location_id", "card_id"], name: "index_slots_on_game_id_and_location_id_and_card_id", unique: true
-    t.index ["game_id"], name: "index_slots_on_game_id"
   end
 
-  add_foreign_key "seats", "games"
-  add_foreign_key "seats", "players"
-  add_foreign_key "slots", "games"
+  add_foreign_key "players", "games"
+  add_foreign_key "players", "users"
 end

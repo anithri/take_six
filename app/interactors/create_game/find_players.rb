@@ -4,7 +4,7 @@ module CreateGame
 
     def call
       chairs  = Chair.all
-      players = Player.active.for_game(chairs.count)
+      players = User.active.for_game(chairs.count)
 
       seats = players.each_with_index.map do |p, idx|
         Seat.new({chair_id: chairs[idx].id, player: p, })

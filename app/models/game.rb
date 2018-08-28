@@ -12,7 +12,7 @@
 #
 
 class Game < ApplicationRecord
-  has_many :seats
+  has_many :players
 
   def decks
     @decks ||= Decks.new(self)

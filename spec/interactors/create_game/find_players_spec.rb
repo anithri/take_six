@@ -8,7 +8,7 @@ RSpec.describe CreateGame::FindPlayers, type: :interactor, skip: true do
       result = CreateGame::FindPlayers.call
 
       expect(result.players).to have_attributes length: TEST_COUNT
-      expect(result.players).to all be_an_instance_of Player
+      expect(result.players).to all be_an_instance_of User
     end
   end
 end
