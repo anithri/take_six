@@ -1,19 +1,28 @@
 class Worker < ActiveHash::Base
 
+  TOTAL_WORKERS = 4 * 30
+
   field :name
-  field :theme
 
-  create id: 11,
-        name: 'workerRed',
-        theme: 'workerRed'
-  create id: 12,
-        name: 'workerBlue',
-        theme: 'workerBlue'
-  create id: 13,
-        name: 'workerGreen',
-        theme: 'workerGreen'
-  create id: 14,
-        name: 'workerPurple',
-        theme: 'workerPurple'
+  def theme
+    self.id
+  end
 
+  create id: 'workerRed',
+        name: 'workerRed'
+
+  create id: 'workerBlue',
+        name: 'workerBlue'
+
+  create id: 'workerGreen',
+        name: 'workerGreen'
+
+  create id: 'workerPurple',
+        name: 'workerPurple'
+
+  class << self
+    def all_ids
+      self.all.map(&:id)
+    end
+  end
 end

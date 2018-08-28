@@ -11,7 +11,6 @@
 #
 
 require 'rails_helper'
-TEST_COUNT = 4
 
 RSpec.describe Player, type: :model do
   describe "Player.random" do
@@ -22,8 +21,8 @@ RSpec.describe Player, type: :model do
 
   describe "Player.for_game(count)" do
     it 'should return <count> Players' do
-      players = Player.for_game(TEST_COUNT)
-      expect(players).to have_attributes length: TEST_COUNT
+      players = Player.for_game(Chair.count)
+      expect(players).to have_attributes length: Chair.count
       expect(players).to all be_an_instance_of Player
     end
   end
