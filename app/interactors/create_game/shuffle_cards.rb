@@ -4,12 +4,15 @@ module CreateGame
 
     def call
       decks = {
-        draw: Card.shuffle,
-        discard: [],
+        dead:           [],
+        discard:        [],
+        starting_count: Card.shuffle,
       }.with_indifferent_access
+
       Location.all.each do |location|
-        decks[location.id] = Array(decks[:draw].pop)
+        decks[location.id] = Array(decks[:starting_count].pop)
       end
+
       Chair.all.each do |chair|
         decks[chair.id] = []
       end

@@ -4,8 +4,8 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.integer :turn, default: 0, null: false
       t.integer :phase, default: 0, null: false
 
-      t.jsonb :pools, default: {}, null: false
-      t.jsonb :decks, default: {}, null: false
+      t.jsonb :pools_json, default: {}, null: false
+      t.jsonb :decks_json, default: {}, null: false
 
       t.timestamps
     end

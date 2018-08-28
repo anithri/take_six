@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CreateGame::Init, type: :interactor do
+RSpec.describe CreateGame::Init, type: :interactor, skip: true do
   describe '.call' do
     it 'should add a game to the context' do
       result = CreateGame::Init.call seats: []

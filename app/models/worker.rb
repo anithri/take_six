@@ -24,5 +24,9 @@ class Worker < ActiveHash::Base
     def all_ids
       self.all.map(&:id)
     end
+
+    def pool(count)
+      self.all_ids * count
+    end
   end
 end

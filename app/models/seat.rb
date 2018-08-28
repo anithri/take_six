@@ -3,12 +3,12 @@
 # Table name: seats
 #
 #  id         :uuid             not null, primary key
-#  goals      :integer          default([]), is an Array
+#  goals      :string           default([]), is an Array
 #  placing    :integer          default(0)
 #  score      :integer          default(0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  chair_id   :integer
+#  chair_id   :string
 #  game_id    :uuid
 #  player_id  :uuid
 #

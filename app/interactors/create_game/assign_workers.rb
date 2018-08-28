@@ -5,11 +5,11 @@ module CreateGame
 
     def call
       pools = {
-        bar:     create_pool(2),
-        dead:    [],
-        discard: create_pool(3),
-        draw:    create_pool(5),
-        reserve: create_pool(20)
+        bar:            create_pool(2),
+        dead:           [],
+        discard:        create_pool(3),
+        starting_count: create_pool(5),
+        reserve:        create_pool(20)
       }
 
       Location.all.each do |location|

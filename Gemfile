@@ -19,6 +19,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'interactor-rails', '~> 2.0'
 gem 'graphql'
 gem 'active_hash'
+gem 'active_model_serializers', '~> 0.10.0'
 
 #  ASSETS
 gem 'sass-rails', '~> 5.0'

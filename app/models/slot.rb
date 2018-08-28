@@ -3,10 +3,10 @@
 # Table name: slots
 #
 #  id          :uuid             not null, primary key
-#  worker_ids  :integer          default([]), not null, is an Array
+#  worker_ids  :string           default([]), not null, is an Array
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  card_id     :integer          not null
+#  card_id     :string           not null
 #  game_id     :uuid
 #  location_id :string           not null
 #
