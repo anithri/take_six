@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_235434) do
   create_table "players", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "game_id"
     t.uuid "user_id"
-    t.string "location_id"
+    t.string "board_id"
     t.string "goals", default: [], array: true
     t.integer "score", default: 0
     t.integer "placing", default: 0

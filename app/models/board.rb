@@ -1,4 +1,4 @@
-class Location < ActiveHash::Base
+class Board < ActiveHash::Base
   PLAYERS = {
     player1: "Player 1",
     player2: "Player 2",
@@ -19,11 +19,11 @@ class Location < ActiveHash::Base
   field :card_count, default: 0
   field :per_worker_count, default: 0
 
-  create id: :bar, name: 'bar', max_cards: 0, per_worker_count: 2
-  create id: :dead, name: 'dead'
-  create id: :discard, name: 'discard', per_worker_count: 3
-  create id: :draw, name: 'draw', card_count: 44, per_worker_count: 5
-  create id: :reserve, name: 'reserve', max_cards: 0, per_worker_count: 20
+  create id: 'bar', name: 'bar', max_cards: 0, per_worker_count: 2
+  create id: 'dead', name: 'dead'
+  create id: 'discard', name: 'discard', per_worker_count: 3
+  create id: 'draw', name: 'draw', card_count: 44, per_worker_count: 5
+  create id: 'reserve', name: 'reserve', max_cards: 0, per_worker_count: 20
 
   GRID.each_pair do |id, name|
     create id:               id,

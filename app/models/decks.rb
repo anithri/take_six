@@ -32,8 +32,8 @@ class Decks
   class << self
     def default_data
       cards = Card.shuffle
-      Location.all.reduce({}.with_indifferent_access) do |hsh,location|
-        hsh[location.id] = cards.pop(location.card_count).map(&:id)
+      Board.all.reduce({}.with_indifferent_access) do |hsh,board|
+        hsh[board.id] = cards.pop(board.card_count).map(&:id)
         hsh
       end
     end

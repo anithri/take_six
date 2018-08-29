@@ -2,15 +2,15 @@
 #
 # Table name: players
 #
-#  id          :uuid             not null, primary key
-#  goals       :string           default([]), is an Array
-#  placing     :integer          default(0)
-#  score       :integer          default(0)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  game_id     :uuid
-#  location_id :string
-#  user_id     :uuid
+#  id         :uuid             not null, primary key
+#  goals      :string           default([]), is an Array
+#  placing    :integer          default(0)
+#  score      :integer          default(0)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  board_id   :string
+#  game_id    :uuid
+#  user_id    :uuid
 #
 # Indexes
 #

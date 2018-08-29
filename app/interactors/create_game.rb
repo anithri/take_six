@@ -16,7 +16,7 @@ class CreateGame
   end
 
   def chairs
-    context.chairs ||= Location::PLAYERS.keys
+    context.chairs ||= Board::PLAYERS.keys
   end
 
   def goals
@@ -30,9 +30,9 @@ class CreateGame
   def players
     context.players ||= users.each_with_index.map do |u, idx|
       Player.new(
-        goals:       goals[idx],
-        location_id: chairs[idx],
-        user:        users[idx]
+        goals:   goals[idx],
+        board_id: chairs[idx],
+        user:    users[idx]
       )
     end
   end

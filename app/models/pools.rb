@@ -31,8 +31,8 @@ class Pools
 
   class << self
     def default_data
-      Location.all.reduce({}) do |hsh,location|
-        hsh[location.id] = Worker.pool(location.per_worker_count)
+      Board.all.reduce({}) do |hsh,board|
+        hsh[board.id] = Worker.pool(board.per_worker_count)
         hsh
       end
     end

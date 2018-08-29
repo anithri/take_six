@@ -3,4 +3,5 @@ class Types::Game < Types::BaseObject
   field :players, [Types::Player], null: false
   field :phase, Int, null: false
   field :turn, Int, null: false
+  field :decks, Types::Decks, null: false
 end
