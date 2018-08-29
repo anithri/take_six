@@ -1,21 +1,20 @@
 class Decks
 
-  attr_accessor :game,:data
+  attr_reader :game
 
   def initialize(game)
     @game = game
-    if @game.decks_json.empty?
-      @game.decks_json = self.class.default_data
-    end
-    @data = @game.decks_json
+  end
+
+  def data
+    game.decks_json
+  end
+
+  def deal
+    game.decks_json = self.class.default_data
   end
 
   def save
-    game.save
-  end
-
-  def save!
-    game.decks_json = data
     game.save
   end
 
@@ -23,14 +22,20 @@ class Decks
     data.values.reduce(0){|s,a| s + a.length} == Card.count
   end
 
+  def method_missing(m,*args,&block)
+    if data.has_key?(m.to_s)
+      return data[m.to_s]
+    end
+    raise ArgumentError.new("Method `#{m}.inspect` doesn't exist.")
+  end
+
   class << self
     def default_data
       cards = Card.shuffle
-      Location.all.reduce({}) do |hsh,location|
+      Location.all.reduce({}.with_indifferent_access) do |hsh,location|
         hsh[location.id] = cards.pop(location.card_count).map(&:id)
         hsh
       end
     end
   end
-
 end

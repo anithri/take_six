@@ -1,6 +1,17 @@
 class Location < ActiveHash::Base
-  PLAYER_COUNT      = 4
-  PROJECT_COUNT     = 16
+  PLAYERS = {
+    player1: "Player 1",
+    player2: "Player 2",
+    player3: "Player 3",
+    player4: "Player 4"
+  }.with_indifferent_access
+
+  PROJECT_COUNT = 16
+  GRID          = (1..PROJECT_COUNT).reduce({}.with_indifferent_access) do |grid, i|
+    grid[:"grid#{i + 1}"] = "Grid #{i + 1}"
+    grid
+  end
+
   NAMES_FOR_NUMBERS = %w{Zed One Two Three Four}
 
   field :name
@@ -14,17 +25,17 @@ class Location < ActiveHash::Base
   create id: :draw, name: 'draw', card_count: 44, per_worker_count: 5
   create id: :reserve, name: 'reserve', max_cards: 0, per_worker_count: 20
 
-  PROJECT_COUNT.times do |i|
-    create id:               :"grid#{i + 1}",
-           name:             "Location #{i + 1}",
+  GRID.each_pair do |id, name|
+    create id:               id,
+           name:             name,
            card_count:       1,
            max_cards:        1,
            per_worker_count: 1
   end
 
-  PLAYER_COUNT.times do |i|
-    create id: :"player#{i + 1}",
-           name: "Player #{NAMES_FOR_NUMBERS[i + 1]}"
+  PLAYERS.each_pair do |id, name|
+    create id:   id,
+           name: name
   end
 
   class << self

@@ -21,4 +21,9 @@ class Game < ApplicationRecord
   def pools
     @pools ||= Pools.new(self)
   end
+
+  def deal
+    decks.deal
+    pools.deal
+  end
 end

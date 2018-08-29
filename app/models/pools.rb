@@ -1,26 +1,32 @@
 class Pools
 
-  attr_accessor :game,:data
+  attr_reader :game,:data
 
   def initialize(game)
     @game = game
-    if @game.pools_json.empty?
-      @game.pools_json = self.class.default_data
-    end
-    @data = @game.pools_json
+  end
+
+  def data
+    @game.pools_json
+  end
+
+  def deal
+    game.pools_json = self.class.default_data
   end
 
   def save
     game.save
   end
 
-  def save!
-    game.pools_json = data
-    game.save
-  end
-
   def complete?
     data.values.reduce(0){|s,a| s + a.length} == Worker::TOTAL_WORKERS.count
+  end
+
+  def method_missing(m,*args,&block)
+    if data.has_key?(m.to_s)
+      return data[m.to_s]
+    end
+    raise ArgumentError.new("Method `#{m}.inspect` doesn't exist.")
   end
 
   class << self
