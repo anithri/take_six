@@ -27,4 +27,29 @@ class Types::QueryType < Types::BaseObject
     Worker.all
   end
   #endregion
+
+  #region Location Model
+  field :player, ::Types::Player, null: true do
+    argument :id, ID, required: true
+  end
+  def player(id:)
+    Player.find(id)
+  end
+
+  field :players, [::Types::Player], null: true do
+    argument :game_id, ID, required: true
+  end
+  def players(game_id:)
+    Player.find_by_game_id(game_id)
+  end
+  #endregion
+
+  #region Game Model
+  field :game, ::Types::Game, null: false do
+    argument :id, ID, required: true
+  end
+  def game(id:)
+    ::Game.find(id)
+  end
+  #endregion
 end

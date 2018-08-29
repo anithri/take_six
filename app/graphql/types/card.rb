@@ -1,6 +1,5 @@
 class Types::Card < Types::BaseObject
-  global_id_field :id
-
+  field :id, ID, null: true
   field :name, String, null: false
-  field :workers, [::Types::Worker], null: true
+  field :workers, [Types::Worker], null: true
 end

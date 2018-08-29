@@ -29,4 +29,6 @@ class Player < ApplicationRecord
   belongs_to :game
   belongs_to :location
 
+  delegate :name, to: :user
+
 end
