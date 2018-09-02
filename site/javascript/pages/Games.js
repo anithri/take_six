@@ -16,9 +16,9 @@ class GamesPage extends React.Component {
   }
 }
 
-HomePage.propTypes = {
+GamesPage.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 }
 
-export default HomePage
+export default GamesPage

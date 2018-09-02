@@ -3,27 +3,42 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "apollo-boost": "^0.1.15",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react": "^6.24.1",
+    "graphql": "^14.0.0",
     "postcss-preset-env": "^5.3.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-apollo": "^2.1.11",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
     "react-typography": "^0.16.13",
     "tachyons-custom": "^4.9.5",
     "typography": "^0.16.17",
     "typography-theme-github": "^0.15.10"
   },
   "devDependencies": {
+    "@types/eslint": "^4.16.3",
+    "@types/eslint-plugin-prettier": "^2.2.0",
+    "@types/graphql": "^0.13.4",
+    "@types/prettier": "^1.13.2",
+    "@types/prop-types": "^15.5.5",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-helmet": "^5.0.7",
+    "@types/react-router-dom": "^4.3.0",
+    "@types/webpack-dev-server": "^3.1.0",
     "eslint": "5.2.0",
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-react": "^7.10.0",
     "hygen": "^1.6.2",
     "prettier": "1.13.7",
+    "typesync": "^0.3.1",
     "webpack-dev-server": "2.11.2"
   },
   "scripts": {
@@ -33,6 +48,7 @@
     "prettier": "prettier \"**/*.{json,md,scss}\" --ignore-path ./.prettierignore",
     "test:other": "yarn prettier --list-different",
     "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
-    "test": "yarn test:other && yarn test:js"
+    "test": "yarn test:other && yarn test:js",
+    "types": "typesync"
   }
 }

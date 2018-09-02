@@ -1,4 +1,6 @@
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
+
 import React from 'react'
 
 class HomePage extends React.Component {
@@ -11,6 +13,7 @@ class HomePage extends React.Component {
         <main>
           <h1>Hiya h1</h1>
           <p>How are you?</p>
+          <Link to="/games">Games</Link>
         </main>
       </div>
     )
