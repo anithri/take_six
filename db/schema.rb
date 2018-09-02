@@ -17,15 +17,18 @@ ActiveRecord::Schema.define(version: 2018_08_28_235434) do
   enable_extension "plpgsql"
 
   create_table "games", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
     t.integer "turn", default: 0, null: false
     t.integer "phase", default: 0, null: false
     t.jsonb "pools_json", default: {}, null: false
     t.jsonb "decks_json", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_games_on_name", unique: true
   end
 
   create_table "players", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
     t.uuid "game_id"
     t.uuid "user_id"
     t.string "board_id"
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_235434) do
     t.integer "placing", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_id", "name"], name: "index_players_on_game_id_and_name", unique: true
     t.index ["game_id"], name: "index_players_on_game_id"
     t.index ["user_id"], name: "index_players_on_user_id"
   end

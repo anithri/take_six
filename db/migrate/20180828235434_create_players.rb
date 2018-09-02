@@ -1,6 +1,7 @@
 class CreatePlayers < ActiveRecord::Migration[5.2]
   def change
     create_table :players, id: :uuid do |t|
+      t.string :name, null: false
       t.references :game, foreign_key: true, type: :uuid
       t.references :user, foreign_key: true, type: :uuid
 
@@ -12,5 +13,7 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    add_index :players, [:game_id, :name], unique: true
   end
 end

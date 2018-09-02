@@ -12,7 +12,10 @@ class CreateGame
   end
 
   def game
-    context.game ||= Game.new(players: players)
+    context.game ||= Game.new(
+      name:    Faker::TakeSix.game,
+      players: players
+    )
   end
 
   def chairs
@@ -30,9 +33,10 @@ class CreateGame
   def players
     context.players ||= users.each_with_index.map do |u, idx|
       Player.new(
-        goals:   goals[idx],
+        name:     Faker::TakeSix.player,
+        goals:    goals[idx],
         board_id: chairs[idx],
-        user:    users[idx]
+        user:     users[idx]
       )
     end
   end
