@@ -21,6 +21,5 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
 
-  get 'pages/home'
-  root 'pages#home'
+  get '*path', to: 'pages#home'
 end
