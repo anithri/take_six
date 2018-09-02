@@ -234,7 +234,7 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * 1. Change the font styles in all browsers (opinionated).
+ * 1. Change the font css in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
 
@@ -297,7 +297,7 @@ button::-moz-focus-inner,
 }
 
 /**
- * Restore the focus styles unset by the previous rule.
+ * Restore the focus css unset by the previous rule.
  */
 
 button:-moz-focusring,

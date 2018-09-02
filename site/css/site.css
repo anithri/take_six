@@ -1,5 +1,5 @@
 @import 'tachyons/custom.css';
-@import './_typography.css';
+@import '_typography.css';
 @import '_palette.css';
 @import '_variables.css';
 

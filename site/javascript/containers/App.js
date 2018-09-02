@@ -1,4 +1,4 @@
-import 'styles/app.css'
+import 'css/site.css'
 import Helmet from './Helmet'
 import Pages from 'pages'
 import React from 'react'
