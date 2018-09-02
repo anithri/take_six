@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CreateGame, skip: true do
+RSpec.describe CreateGame do
   describe '#call' do
     it 'should respond to #call' do
       expect(CreateGame).to respond_to :call
