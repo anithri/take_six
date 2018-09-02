@@ -23,7 +23,7 @@ class CreateGame
   end
 
   def goals
-    context.goals ||= Worker.all_ids.shuffle.map {|wid| Worker.all_ids - [wid]}
+    context.goals ||= Worker.all_goals
   end
 
   def users

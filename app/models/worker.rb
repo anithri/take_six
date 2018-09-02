@@ -28,5 +28,9 @@ class Worker < ActiveHash::Base
     def pool(count)
       self.all_ids * count
     end
+
+    def all_goals
+      Worker.all.shuffle.map{|w| Worker.all - [w]}
+    end
   end
 end

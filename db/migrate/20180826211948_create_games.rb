@@ -8,6 +8,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.jsonb :pools_json, default: {}, null: false
       t.jsonb :decks_json, default: {}, null: false
 
+      t.datetime :finished_at, null: true, index: true
       t.timestamps
     end
 

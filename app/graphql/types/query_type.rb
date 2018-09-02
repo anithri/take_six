@@ -51,6 +51,11 @@ class Types::QueryType < Types::BaseObject
   def game(id:)
     ::Game.find(id)
   end
+
+  field :games, [Types::Game], null: true
+  def games
+    Game.current
+  end
   #endregion
 
 end

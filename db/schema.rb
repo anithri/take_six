@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2018_08_28_235434) do
     t.integer "phase", default: 0, null: false
     t.jsonb "pools_json", default: {}, null: false
     t.jsonb "decks_json", default: {}, null: false
+    t.datetime "finished_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["finished_at"], name: "index_games_on_finished_at"
     t.index ["name"], name: "index_games_on_name", unique: true
   end
 

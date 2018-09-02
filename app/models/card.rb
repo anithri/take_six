@@ -251,5 +251,9 @@ class Card < ActiveHash::Base
     def shuffle
       self.all.shuffle
     end
+
+    def max_requirements
+      self.all.max{|c| c.worker_ids.length}.worker_ids.length
+    end
   end
 end

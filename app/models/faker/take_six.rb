@@ -1,3 +1,4 @@
+require 'faker'
 module Faker
   class TakeSix < Base
     PLAYER_CHOICES = [
