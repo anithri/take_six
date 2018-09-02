@@ -1,6 +1,6 @@
 class Pools
 
-  attr_reader :game,:data
+  attr_reader :game
 
   def initialize(game)
     @game = game
@@ -20,6 +20,10 @@ class Pools
 
   def complete?
     data.values.reduce(0){|s,a| s + a.length} == Worker::TOTAL_WORKERS.count
+  end
+
+  def pool_for(m)
+    @pool_cache[m] ||= Pool.new(game, m, data[m.to_s])
   end
 
   def method_missing(m,*args,&block)

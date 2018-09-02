@@ -25,12 +25,12 @@ RSpec.describe Game, type: :model do
     end
 
     it 'should have seats' do
-      expect(@game.seats).to be_empty
+      expect(@game.players).to be_empty
     end
 
     it 'should have decks and pools' do
-      expect(@game.decks).to eq({})
-      expect(@game.pools).to eq({})
+      expect(@game.decks).to be_an_instance_of Decks
+      expect(@game.pools).to be_an_instance_of Pools
     end
 
   end

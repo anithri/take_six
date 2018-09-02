@@ -52,4 +52,5 @@ class Types::QueryType < Types::BaseObject
     ::Game.find(id)
   end
   #endregion
+
 end

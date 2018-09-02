@@ -4,6 +4,7 @@ class Decks
 
   def initialize(game)
     @game = game
+    @deck_cache = {}
   end
 
   def data
@@ -22,9 +23,13 @@ class Decks
     data.values.reduce(0){|s,a| s + a.length} == Card.count
   end
 
+  def deck_for(m)
+    @deck_cache[m] ||= Deck.new(game, m, data[m.to_s])
+  end
+
   def method_missing(m,*args,&block)
     if data.has_key?(m.to_s)
-      return data[m.to_s]
+      return deck_for(m.to_s)
     end
     raise ArgumentError.new("Method `#{m}.inspect` doesn't exist.")
   end

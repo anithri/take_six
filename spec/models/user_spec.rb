@@ -20,8 +20,8 @@ RSpec.describe User, type: :model do
 
   describe "Player.for_game(count)" do
     it 'should return <count> Players' do
-      players = User.for_game(Chair.count)
-      expect(players).to have_attributes length: Chair.count
+      players = User.for_game(Board::PLAYERS.count)
+      expect(players).to have_attributes length: Board::PLAYERS.count
       expect(players).to all be_an_instance_of User
     end
   end
