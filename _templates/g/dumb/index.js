@@ -1,4 +1,4 @@
-const defaults = require('../../defaults')
+const defaults = require('../defaults')
 
 module.exports = {
   params: ({args}) => Object.assign(args, defaults)
