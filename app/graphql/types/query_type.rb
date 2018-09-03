@@ -54,7 +54,7 @@ class Types::QueryType < Types::BaseObject
 
   field :games, [Types::Game], null: true
   def games
-    Game.current
+    ::Game.current
   end
   #endregion
 

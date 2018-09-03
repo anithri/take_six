@@ -18,13 +18,8 @@
 #  fk_rails_...  (game_id => games.id)
 #
 
-class Deck < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
+require 'rails_helper'
 
-  belongs_to :game
-  belongs_to :board
-
-  def cards
-    card_data.map{|card_id| Card.find(card_id)}
-  end
+RSpec.describe Deck, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

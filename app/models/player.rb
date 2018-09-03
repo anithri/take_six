@@ -30,4 +30,6 @@ class Player < ApplicationRecord
   belongs_to :user
   belongs_to :game
   belongs_to :board
+
+  default_scope ->{order(:board_id)}
 end

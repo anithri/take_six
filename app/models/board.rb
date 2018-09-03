@@ -58,12 +58,12 @@ class Board < ActiveHash::Base
       self.all.map(&:id)
     end
 
-    def deck_ids
-      self.all.select(&:is_deck?).map(&:id)
+    def decks
+      self.all.select(&:is_deck?)
     end
 
-    def pool_ids
-      self.all.select(&:is_pool?).map(&:id)
+    def pools
+      self.all.select(&:is_pool?)
     end
   end
 end

@@ -3,11 +3,9 @@
 # Table name: games
 #
 #  id          :uuid             not null, primary key
-#  decks_json  :jsonb            not null
 #  finished_at :datetime
 #  name        :string           not null
 #  phase       :integer          default(0), not null
-#  pools_json  :jsonb            not null
 #  turn        :integer          default(0), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -19,20 +17,9 @@
 #
 
 class Game < ApplicationRecord
-  has_many :players
-
-  def decks
-    @decks ||= Decks.new(self)
-  end
-
-  def pools
-    @pools ||= Pools.new(self)
-  end
-
-  def deal
-    decks.deal
-    pools.deal
-  end
+  has_many :players, autosave: true, validate: true
+  has_many :decks, autosave: true, validate: true
+  has_many :pools, autosave: true, validate: true
 
   scope :current, ->{where(finished_at: nil)}
 end

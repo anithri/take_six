@@ -18,15 +18,8 @@
 #  fk_rails_...  (game_id => games.id)
 #
 
-class Pool < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
+require 'rails_helper'
 
-  belongs_to :game
-  belongs_to :board
-
-  def workers
-    worker_data.entries.map do |(worker_id, count)|
-      [Worker.find(worker_id)] * count
-    end.flatten
-  end
+RSpec.describe Pool, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

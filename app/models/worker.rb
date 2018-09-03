@@ -26,7 +26,7 @@ class Worker < ActiveHash::Base
     end
 
     def pool(count)
-      self.all_ids * count
+      self.all_ids.reduce({}){|p,wid| p[wid] = count;p}
     end
 
     def all_goals

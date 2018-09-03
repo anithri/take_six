@@ -10,18 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_235434) do
+ActiveRecord::Schema.define(version: 2018_09_03_001922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
+  create_table "decks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "game_id"
+    t.string "board_id"
+    t.jsonb "card_data", default: [], null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_decks_on_game_id"
+  end
+
   create_table "games", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.integer "turn", default: 0, null: false
     t.integer "phase", default: 0, null: false
-    t.jsonb "pools_json", default: {}, null: false
-    t.jsonb "decks_json", default: {}, null: false
     t.datetime "finished_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,12 +51,23 @@ ActiveRecord::Schema.define(version: 2018_08_28_235434) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
+  create_table "pools", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "game_id"
+    t.string "board_id"
+    t.jsonb "worker_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_pools_on_game_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "decks", "games"
   add_foreign_key "players", "games"
   add_foreign_key "players", "users"
+  add_foreign_key "pools", "games"
 end

@@ -1,5 +1,6 @@
 class Types::Game < Types::BaseObject
   field :id, ID, null: false
+  field :name, String, null: false
   field :players, [Types::Player], null: false
   field :phase, Int, null: false
   field :turn, Int, null: false
@@ -18,5 +19,4 @@ class Types::Game < Types::BaseObject
   def pool(board_id:)
     object.pools.send board_id
   end
-
 end
