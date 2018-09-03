@@ -5,14 +5,12 @@ import PropTypes from 'prop-types'
 import {gql} from 'apollo-boost'
 
 export const <%= name %>Shape = PropTypes.shape({
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
 })
-
-export
 
 export const GET_<%= name.toUpperCase() %> = gql`
   query($id: ID!) {
-    <%= name %>(id: $id) {
+    <%= name.toLowerCase() %>(id: $id) {
       id
     }
   }

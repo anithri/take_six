@@ -12,11 +12,12 @@ class Types::Game < Types::BaseObject
     object.decks.send board_id
   end
 
-  field :pools, Types::Pools, null: false
+  field :pools, Types::PoolsArea, null: false
+
   field :pool, Types::Pool, null: true do
     argument :board_id, ID, required: true
   end
   def pool(board_id:)
-    object.pools.send board_id
+    object.pool(board_id)
   end
 end

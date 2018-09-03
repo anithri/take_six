@@ -21,5 +21,10 @@ class Game < ApplicationRecord
   has_many :decks, autosave: true, validate: true
   has_many :pools, autosave: true, validate: true
 
+  default_scope ->{includes(:players, :decks, :pools)}
   scope :current, ->{where(finished_at: nil)}
+
+  def pool(board_id)
+    self.pools.for_board(board_id)
+  end
 end

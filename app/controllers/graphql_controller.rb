@@ -1,4 +1,5 @@
 class GraphqlController < ApplicationController
+  Rails.env.development? && skip_forgery_protection
   def execute
     variables = ensure_hash(params[:variables])
     query = params[:query]

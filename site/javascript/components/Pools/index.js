@@ -2,11 +2,19 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import cx from 'classnames'
 import styles from './styles'
+import {Link} from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const Pools = ({className}) => (
-  <div className={cx(className, styles.Pools)}>
-    <h2>Component (styled) Pools</h2>
-  </div>
+  <header className={cx(className, styles.Pools)}>
+    <h3>
+      {game.name}
+      <Link to="/games">
+        <FontAwesomeIcon icon="home" />
+      </Link>
+    </h3>
+    <Link to="/games">Home</Link>
+  </header>
 )
 
 Pools.propTypes = {

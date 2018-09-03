@@ -24,9 +24,16 @@ class Pool < ApplicationRecord
   belongs_to :game
   belongs_to :board
 
+  scope :for_game, ->(game_id) {where(game_id: game_id)}
+  scope :for_board, ->(board_id) {find_by_board_id(board_id)}
+
   def workers
     worker_data.entries.map do |(worker_id, count)|
       [Worker.find(worker_id)] * count
     end.flatten
+  end
+
+  def name
+    board.name
   end
 end
