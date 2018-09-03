@@ -8,6 +8,8 @@ export const <%= name %>Shape = PropTypes.shape({
   id: PropTypes.string.isRequired
 })
 
+export
+
 export const GET_<%= name.toUpperCase() %> = gql`
   query($id: ID!) {
     <%= name %>(id: $id) {
