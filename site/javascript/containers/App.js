@@ -4,6 +4,7 @@ import {ApolloProvider} from 'react-apollo'
 import Helmet from './Helmet'
 import Pages from 'pages'
 import React from 'react'
+import _library from 'utils/icons'
 
 const client = new ApolloClient({
   fetchOptions: {

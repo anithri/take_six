@@ -2,6 +2,9 @@
   "name": "takeSix",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.2",
     "@rails/webpacker": "3.5",
     "apollo-boost": "^0.1.15",
     "babel-plugin-module-resolver": "^3.1.1",
