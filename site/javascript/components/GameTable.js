@@ -4,7 +4,6 @@ import React from 'react'
 import {gameShape} from 'models/Game'
 
 const GameTable = ({game, className}) => {
-  console.log('GamesDisplay', game)
   return (
     <div>
       <h3>{game.name}</h3>
