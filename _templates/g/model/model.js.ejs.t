@@ -17,6 +17,3 @@ export const GET_<%= name.toUpperCase() %> = gql`
     }
   }
 `
-
-
-

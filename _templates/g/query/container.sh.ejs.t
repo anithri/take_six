@@ -1,5 +1,5 @@
 ---
 to: null
-sh: "hygen g container:query --name <%= name %> --query=true"
+sh: "hygen g queryContainer --name <%= name %>"
 ---
 hello, this was piped!
