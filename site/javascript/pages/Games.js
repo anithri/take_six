@@ -1,3 +1,5 @@
+import GamesContainer from 'containers/Games'
+import GamesList from 'components/GamesList'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -10,6 +12,7 @@ class GamesPage extends React.Component {
         {children}
         <main>
           <h1>Games List</h1>
+          <GamesContainer display={GamesList} />
         </main>
       </div>
     )
