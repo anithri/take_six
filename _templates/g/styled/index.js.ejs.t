@@ -1,5 +1,5 @@
 ---
-to: <%= components %>/<%= Name %>/index.js
+to: <%= h.src('components', Name, 'index.js' %>
 ---
 import PropTypes from 'prop-types'
 import React from 'react'

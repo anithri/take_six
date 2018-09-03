@@ -1,5 +1,5 @@
 ---
-to: <%= components %>/<%= Name %>/styles.css
+to: <%= h.src('components', Name, 'styles.css') %>
 ---
 .<%= name %> {
 

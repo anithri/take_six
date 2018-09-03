@@ -1,5 +1,5 @@
 ---
-to: <%= containers %>/<%= Name %>.js
+to: <%= h.src('containers', Name, '.js') %>
 ---
 import {GET_<%= Name.toUpperCase() %>} from 'models/<%= Name %>'
 import PropTypes from 'prop-types'

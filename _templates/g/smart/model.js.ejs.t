@@ -1,5 +1,5 @@
 ---
-to: <%= models %>/<%= Name %>.js
+to: <%= h.src('models', Name, '.js') %>
 ---
 import PropTypes from 'prop-types'
 import {gql} from 'apollo-boost'
