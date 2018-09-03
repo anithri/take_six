@@ -1,17 +1,21 @@
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {gamesShape} from 'models/Games'
+import {gameCollectionShape} from 'models/GameCollection'
 
 const GamesList = ({games, className}) => {
-  console.log('GamesList', games)
-  const game_items = games.map(game => <li key={game.id}>{game.name}</li>)
+  const game_items = games.map(game => (
+    <li key={game.id}>
+      <Link to={`/games/${game.id}`}>{game.name}</Link>
+    </li>
+  ))
 
   return <ul className={className}>{game_items}</ul>
 }
 
 GamesList.propTypes = {
   className: PropTypes.string,
-  games: PropTypes.arrayOf(gamesShape),
+  games: PropTypes.arrayOf(gameCollectionShape),
 }
 
 export default GamesList

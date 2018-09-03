@@ -26,7 +26,8 @@
       "module-resolver",
       {
         "alias": {
-          "css": "./site/css"
+          "css": "./site/css",
+          "models": "./site/javascript/models"
         }
       }
     ]

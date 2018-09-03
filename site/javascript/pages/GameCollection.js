@@ -1,9 +1,9 @@
-import GamesContainer from 'containers/Games'
+import GameCollection from 'containers/GameCollection'
 import GamesList from 'components/GamesList'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-class GamesPage extends React.Component {
+class GameCollectionPage extends React.Component {
   render() {
     const {children, className} = this.props
     console.log(this.props)
@@ -12,16 +12,16 @@ class GamesPage extends React.Component {
         {children}
         <main>
           <h1>Games List</h1>
-          <GamesContainer display={GamesList} />
+          <GameCollection display={GamesList} />
         </main>
       </div>
     )
   }
 }
 
-GamesPage.propTypes = {
+GameCollectionPage.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 }
 
-export default GamesPage
+export default GameCollectionPage
