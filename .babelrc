@@ -21,15 +21,6 @@
       {
         "spec": true
       }
-    ],
-    [
-      "module-resolver",
-      {
-        "alias": {
-          "css": "./site/css",
-          "models": "./site/javascript/models"
-        }
-      }
     ]
   ]
 }

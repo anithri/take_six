@@ -32,4 +32,8 @@ class Player < ApplicationRecord
   belongs_to :board
 
   default_scope ->{order(:board_id)}
+
+  def workers
+    goals.map{|id| Worker.find(id)}
+  end
 end

@@ -3,7 +3,7 @@ class GameCreation::Init
 
   def call
     context.chairs ||= Board::PLAYERS.keys
-    context.goals  ||= Worker.all_goals
+    context.goals  ||= Worker.all_goals.map{|a| a.map(&:id)}
     context.decks  ||= deal_cards
     context.pools  ||= deal_workers
   end

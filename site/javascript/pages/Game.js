@@ -2,17 +2,21 @@ import GameContainer from 'containers/Game'
 import GameDisplay from 'components/GameTable'
 import PropTypes from 'prop-types'
 import React from 'react'
+import cx from 'classnames'
 
 class GamePage extends React.Component {
   render() {
-    const {children, className, match: {params: {gameId}}} = this.props
+    const {
+      children,
+      className,
+      match: {
+        params: {gameId},
+      },
+    } = this.props
     return (
-      <div id="GamesPage" className={`pageWrapper ${className}`}>
+      <div className={cx('page', 'gamePage', className)}>
         {children}
-        <main>
-          <h1>Games List</h1>
-          <GameContainer display={GameDisplay} gameId={gameId} />
-        </main>
+        <GameContainer display={GameDisplay} gameId={gameId} />
       </div>
     )
   }

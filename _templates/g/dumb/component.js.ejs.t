@@ -6,7 +6,7 @@ import React from 'react'
 
 const <%= Name %> = ({className}) => (
   <div className={className}>
-    <%= components %>/<%= Name %>.js
+    <h2>Component: <%= Name %></h2>
   </div>
 )
 

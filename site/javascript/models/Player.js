@@ -1,16 +1,24 @@
-import PropTypes from 'prop-types'
 import {gql} from 'apollo-boost'
+import PropTypes from 'prop-types'
 
 export const PlayerShape = PropTypes.shape({
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string,
 })
-
-export
 
 export const GET_PLAYER = gql`
   query($id: ID!) {
-    Player(id: $id) {
+    player(id: $id) {
       id
+      name
+      workers {
+        id
+        name
+      }
+      board {
+        id
+        name
+      }
     }
   }
 `

@@ -19,6 +19,8 @@
   --font-size-2: 1rem;
   --font-size-1: 0.875rem;
   --font-size-0: 0.75rem;
+
+  --spacing-extra-extra-small: 0.125rem;
 }
 
 /* Tachyons vars, override as needed */

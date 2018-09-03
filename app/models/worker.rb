@@ -9,16 +9,16 @@ class Worker < ActiveHash::Base
   end
 
   create id: 'workerRed',
-        name: 'workerRed'
+        name: 'Red'
 
   create id: 'workerBlue',
-        name: 'workerBlue'
+        name: 'Blue'
 
   create id: 'workerGreen',
-        name: 'workerGreen'
+        name: 'Green'
 
   create id: 'workerPurple',
-        name: 'workerPurple'
+        name: 'Purple'
 
   class << self
     def all_ids

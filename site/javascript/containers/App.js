@@ -1,4 +1,4 @@
-import 'css/site.css'
+import '../../stylesheets/site.css'
 import ApolloClient from 'apollo-boost'
 import {ApolloProvider} from 'react-apollo'
 import Helmet from './Helmet'
