@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Types::Deck < Types::BaseObject
   field :id, ID, null: false
   field :game, Types::Game, null: false

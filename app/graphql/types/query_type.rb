@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Types::QueryType < Types::BaseObject
   #region Player Model
   field :player, Types::Player, null: true do
