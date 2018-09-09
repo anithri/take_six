@@ -7,7 +7,7 @@
     "prettier"
   ],
   "extends": [
-    "prettier",
+    "plugin:prettier/recommended",
     "plugin:react/recommended"
   ],
   "parserOptions": {
@@ -63,7 +63,7 @@
         "ignoreCase": false
       }
     ],
-    "prettier/prettier": 2,
+    "prettier/prettier": "error",
     "sort-keys": [
       2,
       "asc",

@@ -44,16 +44,13 @@ class Types::QueryType < Types::BaseObject
     ::Pool.find(id)
   end
 
-  field :pools, Types::Pools, null: true do
+  field :pools, [Types::Pool], null: true do
     argument :game_id, ID, required: true
   end
 
   def pools(game_id:)
     game = ::Game.find game_id
-    Board.pools.reduce({game: game}) do |hsh, board|
-      hsh[board.id] = game.pool(board.id)
-      hsh
-    end
+    game.pools
   end
   #endregion
 end

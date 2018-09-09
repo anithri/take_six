@@ -22,7 +22,7 @@ const GameTable = ({game, className}) => {
 
   return (
     <main className={cx(className, styles.GameTable)}>
-      <PoolsContainer game={game} className={styles.poolsGrid} />
+      {/*<PoolsContainer game={game} className={styles.poolsGrid} />*/}
       {playerAreas}
     </main>
   )
