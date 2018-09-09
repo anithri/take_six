@@ -24,7 +24,7 @@ class Board < ActiveHash::Base
   field :max_cards, default: MAX_CARDS
   field :start_cards, default: 0
 
-  create id: 'bar', name: 'bar', start_workers: 2, max_cards: 0
+  create id: 'bar', name: 'bar', start_workers: 2
   create id: 'dead', name: 'dead', max_cards: 0
   create id: 'discard', name: 'discard'
   create id: 'draw', name: 'draw', start_cards: 44, start_workers: 5

@@ -1,3 +1,45 @@
 .PoolTracker {
+  display: grid;
+  grid-gap: var(--spacing-extra-extra-small);
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 33% 34% 33%;
 
+  & > * {
+    background-color: var(--white-20, rgba(255, 255, 255, .2)); /* .bg-white-20 */
+  }
+}
+
+.Pool {
+  border-radius: var(--border-radius-3, .5rem); /* .br3 */
+  border-style: solid; /* .ba */
+}
+
+.Worker {
+
+}
+
+.header {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.bar {
+  grid-row: 1;
+  grid-column: 2;
+}
+.dead {
+  grid-row: 2;
+  grid-column: 3;
+}
+.discard {
+  grid-row: 2;
+  grid-column: 2;
+}
+.draw {
+  grid-row: 1;
+  grid-column: 3;
+}
+.reserve {
+  grid-row: 2;
+  grid-column: 1;
 }

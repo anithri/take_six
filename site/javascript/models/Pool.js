@@ -27,6 +27,7 @@ export const GET_POOL = gql`
       workers {
         id
         name
+        theme
       }
     }
   }
@@ -36,17 +37,18 @@ export const GET_POOL_TRACKER = gql`
   query($poolsInput: PoolsInput!) {
     pools(poolsInput: $poolsInput) {
       id
-      workers {
-        id
-        name
-        theme
-      }
+      name
       board {
         id
         name
       }
       game {
         id
+      }
+      workers {
+        id
+        name
+        theme
       }
     }
   }
