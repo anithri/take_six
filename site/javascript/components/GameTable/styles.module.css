@@ -13,7 +13,7 @@
     border: 2px solid var(--near-black); /* .ba */
   }
 }
-.messageBox {
+.poolTracker {
   grid-row: 1;
   grid-column: 2;
 }

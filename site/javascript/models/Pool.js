@@ -1,6 +1,6 @@
 import {idShape, namedShape, themedShape} from 'models/Utility'
-import PropTypes from 'prop-types'
 import {gql} from 'apollo-boost'
+import PropTypes from 'prop-types'
 
 export const PoolShape = PropTypes.shape({
   board: namedShape.isRequired,
@@ -32,7 +32,7 @@ export const GET_POOL = gql`
   }
 `
 
-export const GET_POOLS_TRACKER = gql`
+export const GET_POOL_TRACKER = gql`
   query($poolsInput: PoolsInput!) {
     pools(poolsInput: $poolsInput) {
       id

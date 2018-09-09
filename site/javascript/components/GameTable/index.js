@@ -1,13 +1,11 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Link} from 'react-router-dom'
-import Player from 'components/Player'
-import PlayerContainer from 'containers/Player'
-import PropTypes from 'prop-types'
-import Pools from 'components/Pools'
-import PoolsContainer from 'containers/Pools'
-import React from 'react'
 import cx from 'classnames'
 import {gameShape} from 'models/Game'
+import Player from 'components/Player'
+import PlayerContainer from 'containers/Player'
+import PoolTracker from 'components/PoolTracker'
+import PoolTrackerContainer from 'containers/PoolTracker'
+import PropTypes from 'prop-types'
+import React from 'react'
 import styles from './styles'
 
 const GameTable = ({game, className}) => {
@@ -22,7 +20,7 @@ const GameTable = ({game, className}) => {
 
   return (
     <main className={cx(className, styles.GameTable)}>
-      <PoolsContainer game={game} className={styles.poolsGrid} />
+      <PoolTrackerContainer className={styles.poolTracker} game={game} display={PoolTracker} />
       {playerAreas}
     </main>
   )

@@ -60,7 +60,7 @@
     "sort-imports": [
       2,
       {
-        "ignoreCase": false
+        "ignoreCase": true
       }
     ],
     "prettier/prettier": "error",

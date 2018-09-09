@@ -1,12 +1,13 @@
 import cx from 'classnames'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {Link} from 'react-router-dom'
+import {namedShape} from '../../models/Utility'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles.module.css'
 
-const Pools = ({className}) => (
-  <header className={cx(className, styles.Pools)}>
+const PoolTracker = ({className, game}) => (
+  <header className={cx(className, styles.PoolTracker)}>
     <h3>
       {game.name}
       <Link to="/games">
@@ -17,8 +18,9 @@ const Pools = ({className}) => (
   </header>
 )
 
-Pools.propTypes = {
+PoolTracker.propTypes = {
   className: PropTypes.string,
+  game: namedShape,
 }
 
-export default Pools
+export default PoolTracker

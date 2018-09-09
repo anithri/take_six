@@ -49,9 +49,6 @@ class Types::QueryType < Types::BaseObject
   end
 
   def pools(pools_input:)
-    puts "=" * 40
-    puts pools_input.inspect
-    puts "=" * 40
     game = ::Game.find pools_input[:gameId]
     if pools_input[:boardIds]
       game.pools.where(board_id: pools_input[:boardIds])
