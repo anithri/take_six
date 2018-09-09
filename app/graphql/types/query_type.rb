@@ -45,12 +45,19 @@ class Types::QueryType < Types::BaseObject
   end
 
   field :pools, [Types::Pool], null: true do
-    argument :game_id, ID, required: true
+    argument :pools_input, Types::PoolsInput, required: true
   end
 
-  def pools(game_id:)
-    game = ::Game.find game_id
-    game.pools
+  def pools(pools_input:)
+    puts "=" * 40
+    puts pools_input.inspect
+    puts "=" * 40
+    game = ::Game.find pools_input[:gameId]
+    if pools_input[:boardIds]
+      game.pools.where(board_id: pools_input[:boardIds])
+    else
+      game.pools
+    end
   end
   #endregion
 end

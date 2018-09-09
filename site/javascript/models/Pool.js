@@ -10,6 +10,8 @@ export const PoolShape = PropTypes.shape({
   workers: PropTypes.arrayOf(themedShape),
 })
 
+export const PoolsShape = PropTypes.arrayOf(PoolShape)
+
 export const GET_POOL = gql`
   query($id: ID!) {
     pool(id: $id) {
@@ -25,6 +27,26 @@ export const GET_POOL = gql`
       workers {
         id
         name
+      }
+    }
+  }
+`
+
+export const GET_POOLS_TRACKER = gql`
+  query($poolsInput: PoolsInput!) {
+    pools(poolsInput: $poolsInput) {
+      id
+      workers {
+        id
+        name
+        theme
+      }
+      board {
+        id
+        name
+      }
+      game {
+        id
       }
     }
   }

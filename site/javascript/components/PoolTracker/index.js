@@ -1,9 +1,9 @@
+import cx from 'classnames'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React from 'react'
-import cx from 'classnames'
-import styles from './styles'
-import {Link} from 'react-router-dom'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import styles from './styles.module.css'
 
 const Pools = ({className}) => (
   <header className={cx(className, styles.Pools)}>
