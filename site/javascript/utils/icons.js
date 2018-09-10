@@ -1,6 +1,6 @@
-import {faHome} from '@fortawesome/free-solid-svg-icons'
+import {faHome, faChild} from '@fortawesome/free-solid-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
 
-library.add(faHome)
+library.add(faHome, faChild)
 
 export default library

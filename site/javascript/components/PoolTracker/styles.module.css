@@ -1,45 +1,82 @@
 .PoolTracker {
-  display: grid;
-  grid-gap: var(--spacing-extra-extra-small);
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 33% 34% 33%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  margin: calc(-1 * var(--spacing-extra-small));
 
   & > * {
-    background-color: var(--white-20, rgba(255, 255, 255, .2)); /* .bg-white-20 */
+    border: thin solid var(--dark-purple, black);
+    background-color: var(--white-40);
+    border-radius: var(--border-radius-3);
+    margin: var(--spacing-extra-small);
+  }
+
+  & > header {
+    padding-left: var(--spacing-small);
+    padding-right: var(--spacing-small);
+
+    & > h1 {
+      font-size: var(--font-size-3);
+    }
   }
 }
 
 .Pool {
-  border-radius: var(--border-radius-3, .5rem); /* .br3 */
-  border-style: solid; /* .ba */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: center;
+
+  & > header {
+    padding-left: var(--spacing-extra-small, .25rem); /* .ph1 */
+    padding-right: var(--spacing-extra-small, .25rem);
+
+    & > h2 {
+      font-size: var(--font-size-2);
+    }
+  }
 }
 
 .Worker {
-
+  flex: 0 1 auto;
+  padding: var(--spacing-extra-small, .25rem); /* .pa1 */
+  font-size: var(--font-size-3); /* .f5 */
+  & > svg.icon {
+    font-size: var(--font-size-4);
+  }
 }
 
-.header {
-  grid-row: 1;
-  grid-column: 1;
+.WorkerCount {
+  color: var(--black, #000); /* .black */
+  background-color: var(--transparent); /* .bg-transparent */
+  font-weight: bold; /* .b */
+}
+
+.gameTitle {
+
 }
 
 .bar {
-  grid-row: 1;
-  grid-column: 2;
+  order: 4;
 }
+
 .dead {
-  grid-row: 2;
-  grid-column: 3;
+  order: 3
 }
+
 .discard {
-  grid-row: 2;
-  grid-column: 2;
+  order: 1;
 }
+
 .draw {
-  grid-row: 1;
-  grid-column: 3;
+  order: 5;
 }
+
 .reserve {
-  grid-row: 2;
-  grid-column: 1;
+  order: 2
 }

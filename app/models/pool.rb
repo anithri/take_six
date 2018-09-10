@@ -28,12 +28,18 @@ class Pool < ApplicationRecord
   scope :for_board, ->(board_id) {find_by_board_id(board_id)}
 
   def workers
-    worker_data.entries.map do |(worker_id, count)|
-      [Worker.find(worker_id)] * count
-    end.flatten
+    self.worker_data.each_entry.map do |(worker_id, count)|
+      worker = Worker.find(worker_id).dup
+      worker.count = count
+      worker
+    end
+  end
+
+  def set_worker_count(worker, count)
+    self.worker_data[worker.to_s] = count
   end
 
   def name
-    board.name
+    board.name.titleize
   end
 end

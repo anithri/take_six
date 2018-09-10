@@ -2,6 +2,14 @@
     PALETTE
 */
 :root {
+
+  --workerRed: var(--red);
+  --workerBlue: var(--blue);
+  --workerGreen: var(--green);
+  --workerPurple: var(--purple);
+
+  --dark-purple: #431f73;
+
   --black: #000;
   --near-black: #111;
   --dark-gray: #333;

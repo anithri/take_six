@@ -4,7 +4,7 @@
   display: grid;
   grid-gap: var(--spacing-extra-small);
   padding: var(--spacing-extra-small, .25rem); /* .pa1 */
-  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 5rem 2fr 2fr 1fr;
   grid-template-columns: 1fr 3fr 1fr;
 
   & > * {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import {Query} from 'react-apollo'
 import React from 'react'
 
-const TRACKED_BOARDS = ['bar', 'dead', 'discard', 'draw', 'reserve']
+const TRACKED_BOARDS = ['bar', 'draw', 'dead', 'discard', 'reserve']
 
 const PoolTrackerContainer = ({className, game, display: PoolsDisplay}) => {
   const poolsInput = {poolsInput: {boardIds: TRACKED_BOARDS, gameId: game.id}}

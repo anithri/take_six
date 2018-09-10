@@ -17,17 +17,18 @@ const PoolTracker = ({className, game, pools}) => {
   })
 
   return (
-    <section className={cx(className, styles.PoolTracker)}>
-      <header className={styles.header}>
-        <h3>
+    <fidure className={cx(className, styles.PoolTracker)}>
+      <header>
+        <h1>
           {game.name}
+          &nbsp;&nbsp;
           <Link to="/games">
             <FontAwesomeIcon icon="home"/>
           </Link>
-        </h3>
+        </h1>
       </header>
       {allPools}
-    </section>
+    </fidure>
   )
 }
 

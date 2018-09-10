@@ -1,13 +1,14 @@
 import {idShape, namedShape, themedShape} from 'models/Utility'
 import {gql} from 'apollo-boost'
 import PropTypes from 'prop-types'
+import {WorkerShape} from 'models/Worker'
 
 export const PoolShape = PropTypes.shape({
   board: namedShape.isRequired,
   game: idShape.isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  workers: PropTypes.arrayOf(themedShape),
+  workers: PropTypes.arrayOf(WorkerShape),
 })
 
 export const PoolsShape = PropTypes.arrayOf(PoolShape)
@@ -28,6 +29,7 @@ export const GET_POOL = gql`
         id
         name
         theme
+        count
       }
     }
   }
@@ -49,6 +51,7 @@ export const GET_POOL_TRACKER = gql`
         id
         name
         theme
+        count
       }
     }
   }

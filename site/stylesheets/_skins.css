@@ -1,6 +1,5 @@
 .workerBlue {
   background-color: var(--blue, #357edd); /* .bg-blue */
-
 }
 
 .workerRed {
@@ -16,3 +15,4 @@
 .workerPurple {
   background-color: var(--purple, #5e2ca5); /* .bg-purple */
 }
+

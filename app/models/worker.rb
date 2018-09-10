@@ -1,24 +1,31 @@
-class Worker < ActiveHash::Base
+# frozen_string_literal: true
 
+class Worker < ActiveHash::Base
   TOTAL_WORKERS = 4 * 30
 
   field :name
+
+  attr_accessor :count
 
   def theme
     self.id
   end
 
-  create id: 'workerRed',
-        name: 'Red'
+  def to_s
+    id
+  end
 
-  create id: 'workerBlue',
-        name: 'Blue'
+  create id:   'workerRed',
+         name: 'Red'
 
-  create id: 'workerGreen',
-        name: 'Green'
+  create id:   'workerBlue',
+         name: 'Blue'
 
-  create id: 'workerPurple',
-        name: 'Purple'
+  create id:   'workerGreen',
+         name: 'Green'
+
+  create id:   'workerPurple',
+         name: 'Purple'
 
   class << self
     def all_ids
@@ -26,11 +33,11 @@ class Worker < ActiveHash::Base
     end
 
     def pool(count)
-      self.all_ids.reduce({}){|p,wid| p[wid] = count;p}
+      self.all_ids.reduce({}) {|p, wid| p[wid] = count; p}
     end
 
     def all_goals
-      Worker.all.shuffle.map{|w| Worker.all - [w]}
+      Worker.all.shuffle.map {|w| Worker.all - [w]}
     end
   end
 end
