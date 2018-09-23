@@ -1,17 +1,16 @@
 .PoolTracker {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  margin: calc(-1 * var(--spacing-extra-small));
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: var(--spacing-extra-extra-small);
+  margin: var(--spacing-none);
+  padding: var(--spacing-extra-extra-small);
+  background-color: var(--black-20);
+  
   & > * {
     border: thin solid var(--dark-purple, black);
     background-color: var(--white-40);
     border-radius: var(--border-radius-3);
-    margin: var(--spacing-extra-small);
   }
 
   & > header {
@@ -25,15 +24,15 @@
 }
 
 .Pool {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-gap: var(--spacing-extra-extra-small);
+  grid-template-columns: 2fr repeat(4, 1fr);
 
+  & > * {
+    align-self: center;
+  }
   & > header {
-    padding-left: var(--spacing-extra-small, 0.25rem); /* .ph1 */
+    padding-left: var(--spacing-extra-small, 0.25rem);
     padding-right: var(--spacing-extra-small, 0.25rem);
 
     & > h2 {
@@ -43,18 +42,18 @@
 }
 
 .Worker {
-  flex: 0 1 auto;
-  padding: var(--spacing-extra-small, 0.25rem); /* .pa1 */
-  font-size: var(--font-size-3); /* .f5 */
+  color: var(--near-white);
+  padding: var(--spacing-extra-small, 0.25rem);
+  font-size: var(--font-size-3);
   & > svg.icon {
     font-size: var(--font-size-4);
   }
 }
 
 .WorkerCount {
-  color: var(--black, #000); /* .black */
-  background-color: var(--transparent); /* .bg-transparent */
-  font-weight: bold; /* .b */
+  color: var(--white-90);
+  background-color: var(--transparent);
+  font-weight: bold;
 }
 
 .gameTitle {

@@ -21,7 +21,7 @@ const PoolTracker = ({ className, game, pools }) => {
   })
 
   return (
-    <fidure className={cx(className, styles.PoolTracker)}>
+    <figure className={cx(className, styles.PoolTracker)}>
       <header>
         <h1>
           {game.name}
@@ -32,7 +32,7 @@ const PoolTracker = ({ className, game, pools }) => {
         </h1>
       </header>
       {allPools}
-    </fidure>
+    </figure>
   )
 }
 

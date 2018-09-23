@@ -6,7 +6,7 @@ import PoolTracker from 'components/PoolTracker'
 import PoolTrackerContainer from 'containers/PoolTracker'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles'
+import styles from './styles.module.css'
 
 const GameTable = ({ game, className }) => {
   const playerAreas = game.players.map(({ id, board }) => (
