@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet as ReactHelmet} from 'react-helmet'
+import { Helmet as ReactHelmet } from 'react-helmet'
 
 class Helmet extends React.Component {
   render() {

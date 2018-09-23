@@ -1,28 +1,27 @@
 .Player {
   & > header {
-    background-color: var(--black-20, rgba(0, 0, 0, .2)); /* .bg-black-20 */
+    background-color: var(--black-20, rgba(0, 0, 0, 0.2)); /* .bg-black-20 */
     color: var(--white, #fff); /* .white */
 
     & > h2 {
       font-size: var(--font-size-3, 1.5rem); /* .f3 */
       text-align: center; /* .tc */
-      padding-left: var(--spacing-small, .5rem); /* .ph2 */
-      padding-right: var(--spacing-small, .5rem);
+      padding-left: var(--spacing-small, 0.5rem); /* .ph2 */
+      padding-right: var(--spacing-small, 0.5rem);
     }
 
     & > section {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       border-bottom: var(--near-black) thin solid;
-      padding: var(--spacing-extra-small, .25rem); /* .pa1 */
+      padding: var(--spacing-extra-small, 0.25rem); /* .pa1 */
       grid-gap: var(--spacing-extra-small);
     }
-
   }
 }
 
 .scoringWorker {
-  border-radius: var(--border-radius-3, .5rem); /* .br3 */
+  border-radius: var(--border-radius-3, 0.5rem); /* .br3 */
   text-align: center; /* .tc */
-  padding: var(--spacing-extra-extra-small, .125rem); /* .pa1 */
+  padding: var(--spacing-extra-extra-small, 0.125rem); /* .pa1 */
 }

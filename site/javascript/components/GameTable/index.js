@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import {gameShape} from 'models/Game'
+import { gameShape } from 'models/Game'
 import Player from 'components/Player'
 import PlayerContainer from 'containers/Player'
 import PoolTracker from 'components/PoolTracker'
@@ -8,8 +8,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles'
 
-const GameTable = ({game, className}) => {
-  const playerAreas = game.players.map(({id, board}) => (
+const GameTable = ({ game, className }) => {
+  const playerAreas = game.players.map(({ id, board }) => (
     <PlayerContainer
       playerId={id}
       key={board.id}
@@ -20,7 +20,11 @@ const GameTable = ({game, className}) => {
 
   return (
     <main className={cx(className, styles.GameTable)}>
-      <PoolTrackerContainer className={styles.poolTracker} game={game} display={PoolTracker} />
+      <PoolTrackerContainer
+        className={styles.poolTracker}
+        game={game}
+        display={PoolTracker}
+      />
       {playerAreas}
     </main>
   )

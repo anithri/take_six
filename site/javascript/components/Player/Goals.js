@@ -1,10 +1,10 @@
-import {PlayerShape} from 'models/Player'
+import { PlayerShape } from 'models/Player'
 import PropTypes from 'prop-types'
 import React from 'react'
 import cx from 'classnames'
 import styles from './styles.module.css'
 
-const Goals = ({className, workers}) => {
+const Goals = ({ className, workers }) => {
   const goals = workers.map(goal => (
     <div key={goal.id} className={cx(styles.scoringWorker, goal.id)}>
       {goal.name}
@@ -22,7 +22,10 @@ const Goals = ({className, workers}) => {
 Player.propTypes = {
   className: PropTypes.string,
   workers: PropTypes.arrayOf(
-    PropTypes.shape({id: PropTypes.string.isRequired, name: PropTypes.string}),
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string,
+    }),
   ),
 }
 

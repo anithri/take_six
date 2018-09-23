@@ -1,7 +1,7 @@
-import {gql} from 'apollo-boost'
-import {PlayerShape} from './Player'
+import { gql } from 'apollo-boost'
+import { PlayerShape } from './Player'
 import PropTypes from 'prop-types'
-import {namedShape} from './Utility'
+import { namedShape } from './Utility'
 
 export const gameShape = PropTypes.shape({
   id: PropTypes.string.isRequired,

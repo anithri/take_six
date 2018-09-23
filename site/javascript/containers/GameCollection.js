@@ -1,11 +1,11 @@
-import {GET_GAMES} from 'models/GameCollection'
+import { GET_GAMES } from 'models/GameCollection'
 import PropTypes from 'prop-types'
-import {Query} from 'react-apollo'
+import { Query } from 'react-apollo'
 import React from 'react'
 
-const GamesCollectionContainer = ({className, display: List}) => (
+const GamesCollectionContainer = ({ className, display: List }) => (
   <Query query={GET_GAMES}>
-    {({loading, error, data: {games}}) => {
+    {({ loading, error, data: { games } }) => {
       if (loading) return <div>Loading...</div>
       if (error) return <div>Error!</div>
       console.log('GameContainer', games)

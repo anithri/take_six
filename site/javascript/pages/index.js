@@ -1,10 +1,10 @@
-import {Route, BrowserRouter as Router} from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import Game from './Game'
 import GameCollection from './GameCollection'
 import Home from './Home'
 import PropTypes from 'prop-types'
 import React from 'react'
-const SiteRouter = ({className}) => {
+const SiteRouter = ({ className }) => {
   return (
     <Router>
       <div className={className}>

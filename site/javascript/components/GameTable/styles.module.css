@@ -3,13 +3,16 @@
   height: 100%; /* .h-100 */
   display: grid;
   grid-gap: var(--spacing-extra-small);
-  padding: var(--spacing-extra-small, .25rem); /* .pa1 */
+  padding: var(--spacing-extra-small, 0.25rem); /* .pa1 */
   grid-template-rows: 5rem 2fr 2fr 1fr;
   grid-template-columns: 1fr 3fr 1fr;
 
   & > * {
-    background-color: var(--white-10, rgba(255, 255, 255, .1)); /* .bg-white-10 */
-    border-radius: var(--border-radius-3, .5rem); /* .br3 */
+    background-color: var(
+      --white-10,
+      rgba(255, 255, 255, 0.1)
+    ); /* .bg-white-10 */
+    border-radius: var(--border-radius-3, 0.5rem); /* .br3 */
     border: 2px solid var(--near-black); /* .ba */
   }
 }

@@ -1,14 +1,21 @@
 import cx from 'classnames'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {PoolShape} from 'models/Pool'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { PoolShape } from 'models/Pool'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles.module.css'
 
-const Pool = ({className, pool}) => {
-  const workers = pool.workers.map(({id, theme, count}) => (
-    <span className={cx(styles.Worker, 'fa-layers fa-fw')} key={`${id}-${count}`}>
-      <FontAwesomeIcon icon="child" color={`var(--${theme})`} className={styles.icon}/>
+const Pool = ({ className, pool }) => {
+  const workers = pool.workers.map(({ id, theme, count }) => (
+    <span
+      className={cx(styles.Worker, 'fa-layers fa-fw')}
+      key={`${id}-${count}`}
+    >
+      <FontAwesomeIcon
+        icon="child"
+        color={`var(--${theme})`}
+        className={styles.icon}
+      />
       <span className={cx('fa-layers-text', styles.WorkerCount)}>{count}</span>
     </span>
   ))

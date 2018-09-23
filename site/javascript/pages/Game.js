@@ -10,7 +10,7 @@ class GamePage extends React.Component {
       children,
       className,
       match: {
-        params: {gameId},
+        params: { gameId },
       },
     } = this.props
     return (

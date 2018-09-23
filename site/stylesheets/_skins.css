@@ -4,15 +4,12 @@
 
 .workerRed {
   background-color: var(--red, #ff4136); /* .bg-red */
-
 }
 
 .workerGreen {
   background-color: var(--green, #19a974); /* .bg-green */
-
 }
 
 .workerPurple {
   background-color: var(--purple, #5e2ca5); /* .bg-purple */
 }
-
