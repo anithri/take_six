@@ -1,13 +1,13 @@
 ---
-to: <%= h.src('containers', Name, '.js') %>
+to: <%= h.src('containers', name, '.js') %>
 ---
-import {GET_<%= Name.toUpperCase() %>} from 'models/<%= Name %>'
+import {GET_<%=  name.toUpperCase() %>} from 'models/<%= name %>'
 import PropTypes from 'prop-types'
 import {Query} from 'react-apollo'
 import React from 'react'
 
-const <%= Name %>Container = ({className, display: <%= Name %>Display}) => (
-  <Query query={GET_<%= Name.toUpperCase() %>}>
+const <%= name %>Container = ({className, display: <%= name %>Display}) => (
+  <Query query={GET_<%= name.toUpperCase() %>}>
     {({loading, error, data: {game}}) => {
       if (loading) return <div>Loading...</div>
       if (error) return <div>Error!</div>
@@ -16,9 +16,9 @@ const <%= Name %>Container = ({className, display: <%= Name %>Display}) => (
   </Query>
 )
 
-<%= Name %>Container.propTypes = {
+<%= name %>Container.propTypes = {
   className: PropTypes.string,
   display: PropTypes.func.isRequired,
 }
 
-export default <%= Name %>Container
+export default <%= name %>Container

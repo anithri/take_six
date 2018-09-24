@@ -3,15 +3,17 @@
 # Table name: decks
 #
 #  id         :uuid             not null, primary key
-#  card_data  :jsonb            not null
+#  card_data  :jsonb
+#  space_type :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  board_id   :string
 #  game_id    :uuid
+#  space_id   :string
 #
 # Indexes
 #
-#  index_decks_on_game_id  (game_id)
+#  index_decks_on_game_id     (game_id)
+#  index_decks_on_space_type  (space_type)
 #
 # Foreign Keys
 #

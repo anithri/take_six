@@ -3,15 +3,17 @@
 # Table name: pools
 #
 #  id          :uuid             not null, primary key
+#  space_type  :string
 #  worker_data :jsonb
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  board_id    :string
 #  game_id     :uuid
+#  space_id    :string
 #
 # Indexes
 #
-#  index_pools_on_game_id  (game_id)
+#  index_pools_on_game_id     (game_id)
+#  index_pools_on_space_type  (space_type)
 #
 # Foreign Keys
 #

@@ -18,11 +18,13 @@ ActiveRecord::Schema.define(version: 2018_09_03_001922) do
 
   create_table "decks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "game_id"
-    t.string "board_id"
-    t.jsonb "card_data", default: [], null: false
+    t.string "space_id"
+    t.string "space_type"
+    t.jsonb "card_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_decks_on_game_id"
+    t.index ["space_type"], name: "index_decks_on_space_type"
   end
 
   create_table "games", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -40,7 +42,8 @@ ActiveRecord::Schema.define(version: 2018_09_03_001922) do
     t.string "name", null: false
     t.uuid "game_id"
     t.uuid "user_id"
-    t.string "board_id"
+    t.string "space_id"
+    t.string "space_type"
     t.string "goals", default: [], array: true
     t.integer "score", default: 0
     t.integer "placing", default: 0
@@ -48,16 +51,19 @@ ActiveRecord::Schema.define(version: 2018_09_03_001922) do
     t.datetime "updated_at", null: false
     t.index ["game_id", "name"], name: "index_players_on_game_id_and_name", unique: true
     t.index ["game_id"], name: "index_players_on_game_id"
+    t.index ["space_type"], name: "index_players_on_space_type"
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
   create_table "pools", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "game_id"
-    t.string "board_id"
+    t.string "space_id"
+    t.string "space_type"
     t.jsonb "worker_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_pools_on_game_id"
+    t.index ["space_type"], name: "index_pools_on_space_type"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

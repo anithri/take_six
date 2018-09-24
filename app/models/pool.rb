@@ -3,15 +3,17 @@
 # Table name: pools
 #
 #  id          :uuid             not null, primary key
+#  space_type  :string
 #  worker_data :jsonb
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  board_id    :string
 #  game_id     :uuid
+#  space_id    :string
 #
 # Indexes
 #
-#  index_pools_on_game_id  (game_id)
+#  index_pools_on_game_id     (game_id)
+#  index_pools_on_space_type  (space_type)
 #
 # Foreign Keys
 #
@@ -22,7 +24,7 @@ class Pool < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :game
-  belongs_to :board
+  belongs_to :board_space, polymorphic: true
 
   scope :for_game, ->(game_id) {where(game_id: game_id)}
   scope :for_board, ->(board_id) {find_by_board_id(board_id)}

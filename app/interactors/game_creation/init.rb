@@ -1,9 +1,10 @@
 class GameCreation::Init
   include Interactor
+  include GameParameters
 
   def call
-    context.chairs ||= Board::PLAYERS.keys
-    context.goals  ||= Worker.all_goals.map{|a| a.map(&:id)}
+    context.chairs ||= PLAYERS.keys
+    context.goals  ||= Worker.all_goals.map {|a| a.map(&:id)}
     context.decks  ||= deal_cards
     context.pools  ||= deal_workers
   end

@@ -59,4 +59,35 @@ class Types::QueryType < Types::BaseObject
     end
   end
   #endregion
+
+  #region Deck Model
+  field :deck, Types::Deck, null: true do
+    argument :id, ID, required: true
+  end
+
+  def deck(id:)
+    ::Deck.find(id)
+  end
+
+  field :decks, [Types::Deck], null: true do
+    argument :decks_input, Types::DecksInput, required: true
+  end
+
+  def decks(decks_input:)
+    result = FetchDecks.call args: decks_input
+
+    collection = Game.find(decks_input[:game_id]).decks
+
+    if decks_input[:board_ids]
+      collection = collection.where(id: decks_input[:board_ids])
+    end
+
+    group = decks_input[:deck_groupt]
+    if decks_input[:deck_group] && decks_input[:deck_group] != ''
+      game.decks.where(board_id: decks_input[:boardIds])
+    else
+      game.decks
+    end
+  end
+  #endregion
 end

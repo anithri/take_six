@@ -6,7 +6,7 @@
   margin: var(--spacing-none);
   padding: var(--spacing-extra-extra-small);
   background-color: var(--black-20);
-  
+
   & > * {
     border: thin solid var(--dark-purple, black);
     background-color: var(--white-40);

@@ -10,9 +10,12 @@ class Types::Game < Types::BaseObject
   field :deck, Types::Deck, null: true do
     argument :board_id, ID, required: true
   end
+
   def deck(board_id:)
     object.decks.send board_id
   end
+
+  field :grid, Types::Decks, null: false
 
   field :pools, [Types::Pool], null: false
 

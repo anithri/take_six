@@ -5,7 +5,8 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.references :game, foreign_key: true, type: :uuid
       t.references :user, foreign_key: true, type: :uuid
 
-      t.string :board_id
+      t.string :board_space_id
+      t.string :board_space_type
       t.string :goals, array: true, default: []
 
       t.integer :score, default: 0
@@ -15,5 +16,7 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
     end
 
     add_index :players, [:game_id, :name], unique: true
+    add_index :players, :board_space_type
+
   end
 end

@@ -7,16 +7,18 @@
 #  name       :string           not null
 #  placing    :integer          default(0)
 #  score      :integer          default(0)
+#  space_type :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  board_id   :string
 #  game_id    :uuid
+#  space_id   :string
 #  user_id    :uuid
 #
 # Indexes
 #
 #  index_players_on_game_id           (game_id)
 #  index_players_on_game_id_and_name  (game_id,name) UNIQUE
+#  index_players_on_space_type        (space_type)
 #  index_players_on_user_id           (user_id)
 #
 # Foreign Keys
