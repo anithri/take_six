@@ -2,7 +2,7 @@ class Mutations::CreateGame < Mutations::BaseMutation
 
   field :game, Types::Game, null: false
 
-  def resolve()
+  def resolve
     r = ::CreateGame.call
     if r.success?
       {

@@ -2,6 +2,7 @@ import GameCollection from 'containers/GameCollection'
 import GamesList from 'components/GamesList'
 import PropTypes from 'prop-types'
 import React from 'react'
+import CreateGameBtn from 'containers/CreateGame'
 
 class GameCollectionPage extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class GameCollectionPage extends React.Component {
         {children}
         <main>
           <h1>Games List</h1>
+          <CreateGameBtn />
           <GameCollection display={GamesList} />
         </main>
       </div>

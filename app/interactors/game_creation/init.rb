@@ -17,7 +17,7 @@ class GameCreation::Init
 
   def deal_workers
     Board.pools.map do |board|
-      Pool.new(board: board, worker_data: Worker.pool(board.start_workers))
+      Pool.new(board_id: board.id, worker_data: Worker.pool(board.start_workers))
     end
   end
 

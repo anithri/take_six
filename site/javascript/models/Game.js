@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost'
-import { PlayerShape } from './Player'
 import PropTypes from 'prop-types'
+import { PlayerShape } from './Player'
 import { namedShape } from './Utility'
 
 export const gameShape = PropTypes.shape({
@@ -21,6 +21,17 @@ export const GET_GAME = gql`
         board {
           id
         }
+      }
+    }
+  }
+`
+
+export const CREATE_GAME = gql`
+  mutation CreateGame {
+    createGame {
+      game {
+        id
+        name
       }
     }
   }

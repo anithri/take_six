@@ -9,7 +9,7 @@ export const gameCollectionShape = PropTypes.arrayOf(
 )
 
 export const GET_GAMES = gql`
-  query {
+  query getGames {
     games {
       id
       name
