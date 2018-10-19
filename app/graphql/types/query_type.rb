@@ -59,4 +59,13 @@ class Types::QueryType < Types::BaseObject
     end
   end
   #endregion
+
+  field :grid_area, Types::GridArea, null: false do
+    argument :grid_area_input, Types::GridAreaInput, required: true
+  end
+
+  def grid_area(grid_area_input:)
+    game = ::Game.find grid_area_input[:gameId]
+    game.grid_area(grid_area_input[:grid_area_id])
+  end
 end

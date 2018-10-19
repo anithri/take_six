@@ -9,6 +9,7 @@ import React from 'react'
 import styles from './styles.module.css'
 
 const GameTable = ({ game, className }) => {
+  console.log(game)
   const playerAreas = game.players.map(({ id, board }) => (
     <PlayerContainer
       playerId={id}

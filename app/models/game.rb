@@ -27,4 +27,12 @@ class Game < ApplicationRecord
   def pool(board_id)
     self.pools.for_board(board_id)
   end
+
+  def deck(board_id)
+    self.decks.for_board(board_id)
+  end
+
+  def grid_area(grid_area_id)
+    GridArea.new(self, grid_area_id)
+  end
 end

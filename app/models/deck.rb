@@ -24,6 +24,8 @@ class Deck < ApplicationRecord
   belongs_to :game
   belongs_to :board
 
+  scope :for_game, ->(game_id){where(game_id: game_id)}
+  scope :for_board, ->(board_id) {find_by_board_id(board_id)}
   def cards
     card_data.map{|card_id| Card.find(card_id)}
   end

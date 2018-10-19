@@ -12,7 +12,7 @@ class Board < ActiveHash::Base
 
   PROJECT_COUNT = 16
   GRID          = (1..PROJECT_COUNT).reduce({}.with_indifferent_access) do |grid, i|
-    grid[:"grid#{i + 1}"] = "Grid #{i + 1}"
+    grid[:"grid#{i}"] = "Grid #{i}"
     grid
   end
 
